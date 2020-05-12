@@ -18,8 +18,6 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true, parameterLimit: 50000 }));
 app.use(cors({ origin: corsUrl, optionsSuccessStatus: 200 }));
 
-app.use(express.static(path.join(__dirname, 'client/orchitech-notes-client/dist/orchitech-notes-client')));
-
 // Routes
 app.use('/api/v1', routesV1);
 
