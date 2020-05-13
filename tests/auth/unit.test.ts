@@ -4,7 +4,7 @@ import {apiKey} from "../../src/config";
 
 describe('Apikey validation', () => {
 
-    const endpoint = '/v1/dummy/test';
+    const endpoint = '/api/v1/dummy/test';
     const request = supertest(app);
 
     it('Should response with 400 if api-key header is not passed', async () => {

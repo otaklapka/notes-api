@@ -6,7 +6,7 @@ import app from "../../../../src/app";
 import {Types} from "mongoose";
 
 describe('Notes', () => {
-    const endpoint = '/v1/notes';
+    const endpoint = '/api/v1/notes';
     const request = supertest(app);
 
     beforeEach(() => {

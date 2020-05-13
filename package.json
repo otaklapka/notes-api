@@ -13,7 +13,7 @@
     "watch-ts": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json --fix",
     "jest-clear": "jest --clearCache",
-    "test": "jest --forceExit --detectOpenHandles --coverage --verbose",
+    "test": "jest --forceExit --detectOpenHandles --verbose",
     "test:file": "npm run jest-clear && jest --forceExit --detectOpenHandles --verbose"
   },
   "author": "klapka.ota@gmail.com",
