@@ -1,6 +1,6 @@
 import express, { Request } from 'express';
 import asyncHandler from '../../../helpers/asyncHandler';
-import { SuccessResponse } from '../../../core/ApiResponse';
+import { CreatedResponse, SuccessResponse } from '../../../core/ApiResponse';
 import validator, { ValidationSource } from '../../../helpers/validator';
 import schema from './schema';
 import NoteRepo from '../../../database/repository/NoteRepo';
@@ -27,7 +27,7 @@ router.post('/', validator(schema.create, ValidationSource.BODY),
         if (duplicate.length > 0) throw new BadRequestError(`Note "${req.body.content}" already exists.`);
 
         const createdNote = await NoteRepo.create(req.body.content, false);
-        return new SuccessResponse('success', createdNote).send(res);
+        return new CreatedResponse('success', createdNote).send(res);
     }));
 
 router.put('/:id', validator(schema.update, ValidationSource.BODY), validator(schema.id, ValidationSource.PARAM),
